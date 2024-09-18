@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARTA PARA EL AMOR DE MI VIDA 💞</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            background-color: #87CEEB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .sol {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            width: 130px;
+            height: 130px;
+            background-image: url('https://img.icons8.com/ios/452/sun--v1.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+            z-index: 3; 
+            transition: transform 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-origin: center;
+        }
+        .sol.girar {
+            animation: girar 1s linear;
+        }
+        @keyframes girar {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .presiona_aqui {
+            position: absolute;
+            top: 30%; 
+            left: 85%;
+            font-size: 10px;
+        }
+        .pasto {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 120px;
+            background: #32CD32; 
+            z-index: 1;
+        }
+        .carta {
+            width: 600px; 
+            height: 400px; 
+            perspective: 1000px;
+            position: absolute;
+            top: 20%;
+            right: 18%;
+            z-index: 2;
+        }
+        .carta-contenedor {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transform-origin: center;
+            transition: transform 1s;
+            transform: rotateY(0deg);
+        }
+        .carta-abierta {
+            transform: rotateY(-180deg);
+        }
+        .carta-hoja {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            backface-visibility: hidden;
+            padding: 20px;
+        }
+        .carta-hoja:nth-of-type(1) {
+            left: 0;
+            background: #F77FBE; 
+        }
+        .carta-hoja:nth-of-type(2) {
+            right: 0;
+            background: #B695C0;
+            transform: rotateY(180deg);
+        }
+        .texto-arriba {
+            position: absolute;
+            top: -3.3%;
+            right: -11%;
+            text-align: center;
+            font-size: 8px; 
+            width: 365px;
+            font-family: 'Bradley Hand', cursive;
+            color: #000000;
+        }
+        .texto-medio {
+            position: absolute;
+            top: 65%;
+            right: -1%;
+            text-align: center;
+            font-size: 12.3px; 
+            width: 300px;
+            font-family: 'Dancing Script', cursive;
+            color: #EA899A;
+        }
+        .texto-abajo {
+            position: absolute;
+            top: 75%;
+            right: 2%;
+            text-align: center;
+            font-size: 10px; 
+            width: 285px;
+            font-family: 'Bradley Hand', cursive; 
+            color: #000000;
+        }
+        .texto-arriba1 {
+            position: absolute;
+            top: -2%;
+            right: 3.5%;
+            text-align: center;
+            font-size: 9px; 
+            width: 275px;
+            font-family: 'Bradley Hand', cursive; 
+            color: #000000;
+        }  
+        .texto-medio2 {
+            position: absolute;
+            top: 11.5%;
+            right: -1%;
+            text-align: center;
+            font-size: 12.3px; 
+            width: 300px;
+            font-family: 'Dancing Script', cursive;
+            color: #EA899A;
+        }
+        .texto-abajo2 {
+            position: absolute;
+            top: 96.5%;
+            right: 3%;
+            text-align: center;
+            font-size: 10px; 
+            width: 285px;
+            font-family: 'Bradley Hand', cursive; 
+            color: #000000;
+        }
+        .abrir-btn {
+            position: absolute;
+            top: 98%; 
+            right: 63%; 
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
+            z-index: 4; 
+        }
+        .abrir-btn:hover {
+            background-color: #0056b3;
+        }
+        .nube1 {
+            position: absolute;
+            top: -35%; 
+            left: -80%;
+        }
+        .nube2 {
+            position: absolute;
+            top: -15%; 
+            left: -40%;
+        }
+        .nube3 {
+            position: absolute;
+            top: -35%; 
+            left: 0%;
+        }
+        .nube4 {
+            position: absolute;
+            top: -15%; 
+            left: 40%;
+        }
+        .nube5 {
+            position: absolute;
+            top: -35%; 
+            left: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="sol" onclick="girarSol()"></div>
+    <div class="presiona_aqui"> 
+        <p>⭡</p>
+        <p>C</p>
+        <p>L</p>
+        <p>I</p>
+        <p>C</p>
+        <p>K</p>
+        <p>-</p>
+        <p>A</p>
+        <p>Q</p>
+        <p>U</p>
+        <p>I</p> 
+    </div>
+    <div class="pasto"></div>
+    <div class="carta">
+    <div class="nube1 ">
+        <img src="https://media.giphy.com/media/85VfHIvE62li1QWi8C/giphy.gif" alt="Imagen" style="width: 150%; max-width: 150px;">
+    </div>
+    <div class="nube2">
+        <img src="https://media.giphy.com/media/85VfHIvE62li1QWi8C/giphy.gif" alt="Imagen" style="width: 150%; max-width: 150px;">
+    </div>
+    <div class="nube3">
+        <img src="https://media.giphy.com/media/85VfHIvE62li1QWi8C/giphy.gif" alt="Imagen" style="width: 150%; max-width: 150px;">
+    </div>
+    <div class="nube4">
+        <img src="https://media.giphy.com/media/85VfHIvE62li1QWi8C/giphy.gif" alt="Imagen" style="width: 150%; max-width: 150px;">
+    </div>
+    <div class="nube5">
+        <img src="https://media.giphy.com/media/85VfHIvE62li1QWi8C/giphy.gif" alt="Imagen" style="width: 150%; max-width: 150px;">
+    </div>
+        <div class="carta-contenedor" id="cartaContenedor">
+            <div class="carta-hoja">
+                <div class="texto-arriba">
+                    <h1>PARA MI PRINCESITA HERMOSA ღ</h1>
+                </div>
+                <img src="https://i.pinimg.com/564x/11/ee/24/11ee241cdc6191b64d32e81eb283f7ad.jpg" alt="Imagen" style="width: 320%; max-width: 280px;">
+                <div class="texto-medio">
+                    <h2>ya casate conmigo preciosa 💞</h2>
+                </div>
+                <div class="texto-abajo">
+                    <h2><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1PDP7mLiAMwhfmgIwzhOm2?utm_source=generator" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></h2>
+                </div>
+            </div>
+            <div class="carta-hoja">
+                <div class="texto-arriba1">
+                <h2>💞 DEJAME AMARTE DE LA FORMA 💞 💕 QUE NUNCA LO HAN HECHO 💕</h2>
+                </div>
+                <div class="texto-medio2">
+                <img src="https://i.pinimg.com/564x/55/58/c5/5558c55366f4c066bda13d940a921aa7.jpg" alt="Imagen" style="width: 100%; max-width: 250px;">
+                <div class="texto-abajo2">
+                <p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6ilc4vQcwMPlvAHFfsTGng?utm_source=generator&theme=0" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></p>           
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="abrir-btn" onclick="abrirCarta()">Abrir Carta</button>
+    <script>
+        function abrirCarta() {
+            const contenedor = document.getElementById('cartaContenedor');
+            contenedor.classList.toggle('carta-abierta');
+        }
+        
+        function girarSol() {
+            const sol = document.querySelector('.sol');
+            sol.classList.toggle('girar');
+        }
+    </script>
+</body>
+</html>
